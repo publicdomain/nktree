@@ -35,11 +35,6 @@ namespace nktree
 
         }
 
-        void ExitToolStripMenuItemClick(object sender, EventArgs e)
-        {
-
-        }
-
         void FreeReleasesPublicDomainIsToolStripMenuItemClick(object sender, EventArgs e)
         {
             // Open our website
@@ -76,6 +71,12 @@ namespace nktree
         void DirectoryTextBoxDragEnter(object sender, DragEventArgs e)
         {
 
+        }
+
+        void ExitToolStripMenuItemClick(object sender, EventArgs e)
+        {
+            // Close program        
+            this.Close();
         }
     }
 }
