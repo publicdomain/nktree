@@ -46,6 +46,8 @@ namespace nktree
 			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
 			this.mainStatusStrip = new System.Windows.Forms.StatusStrip();
+			this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+			this.collectedCountToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this.deletedToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this.deletedCountToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -183,6 +185,8 @@ namespace nktree
 			// mainStatusStrip
 			// 
 			this.mainStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+									this.toolStripStatusLabel1,
+									this.collectedCountToolStripStatusLabel,
 									this.deletedToolStripStatusLabel,
 									this.deletedCountToolStripStatusLabel});
 			this.mainStatusStrip.Location = new System.Drawing.Point(0, 390);
@@ -190,6 +194,19 @@ namespace nktree
 			this.mainStatusStrip.Size = new System.Drawing.Size(384, 22);
 			this.mainStatusStrip.SizingGrip = false;
 			this.mainStatusStrip.TabIndex = 42;
+			// 
+			// toolStripStatusLabel1
+			// 
+			this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+			this.toolStripStatusLabel1.Size = new System.Drawing.Size(60, 17);
+			this.toolStripStatusLabel1.Text = "Collected:";
+			// 
+			// collectedCountToolStripStatusLabel
+			// 
+			this.collectedCountToolStripStatusLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+			this.collectedCountToolStripStatusLabel.Name = "collectedCountToolStripStatusLabel";
+			this.collectedCountToolStripStatusLabel.Size = new System.Drawing.Size(14, 17);
+			this.collectedCountToolStripStatusLabel.Text = "0";
 			// 
 			// deletedToolStripStatusLabel
 			// 
@@ -321,6 +338,7 @@ namespace nktree
 			this.collectedCheckedListBox.Location = new System.Drawing.Point(3, 152);
 			this.collectedCheckedListBox.Name = "collectedCheckedListBox";
 			this.collectedCheckedListBox.Size = new System.Drawing.Size(378, 162);
+			this.collectedCheckedListBox.Sorted = true;
 			this.collectedCheckedListBox.TabIndex = 7;
 			// 
 			// collectButton
@@ -345,6 +363,7 @@ namespace nktree
 			this.Controls.Add(this.mainStatusStrip);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "MainForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "nkTree";
 			this.mainMenuStrip.ResumeLayout(false);
 			this.mainMenuStrip.PerformLayout();
@@ -357,6 +376,8 @@ namespace nktree
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.ToolStripStatusLabel collectedCountToolStripStatusLabel;
+		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
 		private System.Windows.Forms.Button collectButton;
 		private System.Windows.Forms.CheckedListBox collectedCheckedListBox;
 		private System.Windows.Forms.TextBox patternTextBox;
