@@ -53,7 +53,8 @@ namespace nktree
 
         void SourceCodeGithubcomToolStripMenuItemClick(object sender, EventArgs e)
         {
-
+            // Open GitHub repository
+            Process.Start("https://github.com/publicdomain/nktree/");
         }
 
         void AboutToolStripMenuItemClick(object sender, EventArgs e)
