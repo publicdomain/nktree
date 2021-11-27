@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -41,7 +42,8 @@ namespace nktree
 
         void FreeReleasesPublicDomainIsToolStripMenuItemClick(object sender, EventArgs e)
         {
-
+            // Open our website
+            Process.Start("https://publicdomain.is");
         }
 
         void OriginalThreadDonationCodercomToolStripMenuItemClick(object sender, EventArgs e)
