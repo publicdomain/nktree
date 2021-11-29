@@ -52,7 +52,7 @@ namespace nktree
 			this.deletedCountToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.directoryLabel = new System.Windows.Forms.Label();
-			this.startButton = new System.Windows.Forms.Button();
+			this.deleteButton = new System.Windows.Forms.Button();
 			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
 			this.browseButton = new System.Windows.Forms.Button();
 			this.directoryTextBox = new System.Windows.Forms.TextBox();
@@ -124,6 +124,7 @@ namespace nktree
 			this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
 			this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
 			this.optionsToolStripMenuItem.Text = "&Options";
+			this.optionsToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.OptionsToolStripMenuItemDropDownItemClicked);
 			// 
 			// alwaysOnTopToolStripMenuItem
 			// 
@@ -226,7 +227,7 @@ namespace nktree
 			this.tableLayoutPanel1.ColumnCount = 1;
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
 			this.tableLayoutPanel1.Controls.Add(this.directoryLabel, 0, 0);
-			this.tableLayoutPanel1.Controls.Add(this.startButton, 0, 8);
+			this.tableLayoutPanel1.Controls.Add(this.deleteButton, 0, 8);
 			this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
 			this.tableLayoutPanel1.Controls.Add(this.label1, 0, 3);
 			this.tableLayoutPanel1.Controls.Add(this.patternTextBox, 0, 4);
@@ -259,17 +260,17 @@ namespace nktree
 			this.directoryLabel.Text = "&Directory:";
 			this.directoryLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// startButton
+			// deleteButton
 			// 
-			this.startButton.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.startButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.startButton.Location = new System.Drawing.Point(3, 324);
-			this.startButton.Name = "startButton";
-			this.startButton.Size = new System.Drawing.Size(378, 39);
-			this.startButton.TabIndex = 2;
-			this.startButton.Text = "&DELETE";
-			this.startButton.UseVisualStyleBackColor = true;
-			this.startButton.Click += new System.EventHandler(this.StartButtonClick);
+			this.deleteButton.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.deleteButton.Location = new System.Drawing.Point(3, 324);
+			this.deleteButton.Name = "deleteButton";
+			this.deleteButton.Size = new System.Drawing.Size(378, 39);
+			this.deleteButton.TabIndex = 2;
+			this.deleteButton.Text = "&DELETE";
+			this.deleteButton.UseVisualStyleBackColor = true;
+			this.deleteButton.Click += new System.EventHandler(this.DeleteButtonClick);
 			// 
 			// tableLayoutPanel2
 			// 
@@ -385,7 +386,7 @@ namespace nktree
 		private System.Windows.Forms.TextBox directoryTextBox;
 		private System.Windows.Forms.Button browseButton;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-		private System.Windows.Forms.Button startButton;
+		private System.Windows.Forms.Button deleteButton;
 		private System.Windows.Forms.Label directoryLabel;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
 		private System.Windows.Forms.ToolStripStatusLabel deletedCountToolStripStatusLabel;
