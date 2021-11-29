@@ -37,6 +37,11 @@ namespace nktree
             this.freeReleasesPublicDomainIsToolStripMenuItem.Image = this.associatedIcon.ToBitmap();
         }
 
+        void CollectButtonClick(object sender, EventArgs e)
+        {
+
+        }
+
         void DeleteButtonClick(object sender, EventArgs e)
         {
 
@@ -44,7 +49,12 @@ namespace nktree
 
         void BrowseButtonClick(object sender, EventArgs e)
         {
+            this.folderBrowserDialog.SelectedPath = string.Empty;
 
+            if (this.folderBrowserDialog.ShowDialog() == DialogResult.OK && this.folderBrowserDialog.SelectedPath.Length > 0)
+            {
+                this.directoryTextBox.Text = this.folderBrowserDialog.SelectedPath;
+            }
         }
 
         void NewToolStripMenuItemClick(object sender, EventArgs e)
@@ -71,11 +81,6 @@ namespace nktree
         }
 
         void AboutToolStripMenuItemClick(object sender, EventArgs e)
-        {
-
-        }
-
-        void CollectButtonClick(object sender, EventArgs e)
         {
 
         }
