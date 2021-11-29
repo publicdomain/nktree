@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace nktree
@@ -65,7 +66,15 @@ namespace nktree
 
         void DirectoryTextBoxDragDrop(object sender, DragEventArgs e)
         {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                var possibleDirectory = (string[])e.Data.GetData(DataFormats.FileDrop);
 
+                if (Directory.Exists(possibleDirectory[0]))
+                {
+                    this.directoryTextBox.Text = possibleDirectory[0];
+                }
+            }
         }
 
         void DirectoryTextBoxDragEnter(object sender, DragEventArgs e)
