@@ -70,13 +70,7 @@ namespace nktree
 
         void DirectoryTextBoxDragEnter(object sender, DragEventArgs e)
         {
-
-        }
-
-        void ExitToolStripMenuItemClick(object sender, EventArgs e)
-        {
-            // Close program        
-            this.Close();
+            e.Effect = e.Data.GetDataPresent(DataFormats.FileDrop) ? DragDropEffects.Copy : DragDropEffects.None;
         }
 
         void OptionsToolStripMenuItemDropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -89,6 +83,12 @@ namespace nktree
 
             // Set topmost by check box
             this.TopMost = this.alwaysOnTopToolStripMenuItem.Checked;
+        }
+
+        void ExitToolStripMenuItemClick(object sender, EventArgs e)
+        {
+            // Close program        
+            this.Close();
         }
     }
 }
