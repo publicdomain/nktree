@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace nktree
@@ -13,12 +14,27 @@ namespace nktree
     /// </summary>
     public partial class MainForm : Form
     {
+        /// <summary>
+        /// Gets or sets the associated icon.
+        /// </summary>
+        /// <value>The associated icon.</value>
+        private Icon associatedIcon = null;
+
+
         public MainForm()
         {
             //
             // The InitializeComponent() call is required for Windows Forms designer support.
             //
             InitializeComponent();
+
+            /* Set icons */
+
+            // Set associated icon from exe file
+            this.associatedIcon = Icon.ExtractAssociatedIcon(typeof(MainForm).GetTypeInfo().Assembly.Location);
+
+            // Set PublicDomain.is tool strip menu item image
+            this.freeReleasesPublicDomainIsToolStripMenuItem.Image = this.associatedIcon.ToBitmap();
         }
 
         void DeleteButtonClick(object sender, EventArgs e)
