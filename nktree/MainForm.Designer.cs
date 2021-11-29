@@ -46,7 +46,7 @@ namespace nktree
 			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
 			this.mainStatusStrip = new System.Windows.Forms.StatusStrip();
-			this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+			this.collectedToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this.collectedCountToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this.deletedToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this.deletedCountToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -186,7 +186,7 @@ namespace nktree
 			// mainStatusStrip
 			// 
 			this.mainStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-									this.toolStripStatusLabel1,
+									this.collectedToolStripStatusLabel,
 									this.collectedCountToolStripStatusLabel,
 									this.deletedToolStripStatusLabel,
 									this.deletedCountToolStripStatusLabel});
@@ -196,11 +196,11 @@ namespace nktree
 			this.mainStatusStrip.SizingGrip = false;
 			this.mainStatusStrip.TabIndex = 42;
 			// 
-			// toolStripStatusLabel1
+			// collectedToolStripStatusLabel
 			// 
-			this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-			this.toolStripStatusLabel1.Size = new System.Drawing.Size(60, 17);
-			this.toolStripStatusLabel1.Text = "Collected:";
+			this.collectedToolStripStatusLabel.Name = "collectedToolStripStatusLabel";
+			this.collectedToolStripStatusLabel.Size = new System.Drawing.Size(60, 17);
+			this.collectedToolStripStatusLabel.Text = "Collected:";
 			// 
 			// collectedCountToolStripStatusLabel
 			// 
@@ -267,7 +267,7 @@ namespace nktree
 			this.deleteButton.Location = new System.Drawing.Point(3, 324);
 			this.deleteButton.Name = "deleteButton";
 			this.deleteButton.Size = new System.Drawing.Size(378, 39);
-			this.deleteButton.TabIndex = 2;
+			this.deleteButton.TabIndex = 5;
 			this.deleteButton.Text = "&DELETE";
 			this.deleteButton.UseVisualStyleBackColor = true;
 			this.deleteButton.Click += new System.EventHandler(this.DeleteButtonClick);
@@ -329,18 +329,19 @@ namespace nktree
 			this.patternTextBox.Location = new System.Drawing.Point(3, 82);
 			this.patternTextBox.Name = "patternTextBox";
 			this.patternTextBox.Size = new System.Drawing.Size(378, 20);
-			this.patternTextBox.TabIndex = 6;
+			this.patternTextBox.TabIndex = 2;
 			this.patternTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// collectedCheckedListBox
 			// 
+			this.collectedCheckedListBox.CheckOnClick = true;
 			this.collectedCheckedListBox.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.collectedCheckedListBox.FormattingEnabled = true;
 			this.collectedCheckedListBox.Location = new System.Drawing.Point(3, 152);
 			this.collectedCheckedListBox.Name = "collectedCheckedListBox";
 			this.collectedCheckedListBox.Size = new System.Drawing.Size(378, 162);
 			this.collectedCheckedListBox.Sorted = true;
-			this.collectedCheckedListBox.TabIndex = 7;
+			this.collectedCheckedListBox.TabIndex = 4;
 			// 
 			// collectButton
 			// 
@@ -349,13 +350,14 @@ namespace nktree
 			this.collectButton.Location = new System.Drawing.Point(3, 107);
 			this.collectButton.Name = "collectButton";
 			this.collectButton.Size = new System.Drawing.Size(378, 39);
-			this.collectButton.TabIndex = 8;
+			this.collectButton.TabIndex = 3;
 			this.collectButton.Text = "&COLLECT";
 			this.collectButton.UseVisualStyleBackColor = true;
 			this.collectButton.Click += new System.EventHandler(this.CollectButtonClick);
 			// 
 			// MainForm
 			// 
+			this.AcceptButton = this.collectButton;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(384, 412);
@@ -378,7 +380,7 @@ namespace nktree
 			this.PerformLayout();
 		}
 		private System.Windows.Forms.ToolStripStatusLabel collectedCountToolStripStatusLabel;
-		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+		private System.Windows.Forms.ToolStripStatusLabel collectedToolStripStatusLabel;
 		private System.Windows.Forms.Button collectButton;
 		private System.Windows.Forms.CheckedListBox collectedCheckedListBox;
 		private System.Windows.Forms.TextBox patternTextBox;

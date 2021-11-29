@@ -35,10 +35,57 @@ namespace nktree
 
             // Set PublicDomain.is tool strip menu item image
             this.freeReleasesPublicDomainIsToolStripMenuItem.Image = this.associatedIcon.ToBitmap();
+
+            // Set layout up
+            this.directoryTextBox.Focus();
         }
 
         void CollectButtonClick(object sender, EventArgs e)
         {
+            // Check for empty parent
+            if (this.directoryTextBox.Text.Length == 0)
+            {
+                MessageBox.Show("Please set source directory.", "Directory", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                this.directoryTextBox.Focus();
+
+                return;
+            }
+
+            // Check directory
+            if (!Directory.Exists(this.directoryTextBox.Text))
+            {
+                MessageBox.Show("Please use an existing directory.", "Directory", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                this.directoryTextBox.Focus();
+
+                return;
+            }
+
+            // Match all if no pattern
+            if (this.patternTextBox.Text.Length == 0)
+            {
+                this.patternTextBox.Text = "*";
+            }
+
+            // Begin update
+            this.collectedCheckedListBox.BeginUpdate();
+
+            // Clear list box
+            this.collectedCheckedListBox.Items.Clear();
+
+            // Collect directories
+            foreach (var item in Directory.GetDirectories(this.directoryTextBox.Text, this.patternTextBox.Text, SearchOption.AllDirectories))
+            {
+                this.collectedCheckedListBox.Items.Add(item, true);
+            }
+
+            // Endupdate
+            this.collectedCheckedListBox.EndUpdate();
+
+            // update status
+            this.collectedCountToolStripStatusLabel.Text = this.collectedCheckedListBox.Items.Count.ToString();
+            this.deletedCountToolStripStatusLabel.Text = "0";
 
         }
 
