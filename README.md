@@ -1,4 +1,5 @@
-# nktree
+# nkTree
+
 GUI for actions on a directory tree.
 
 ![nktree_0-1-0](https://user-images.githubusercontent.com/54631779/143993168-914211c0-9e1f-402c-a55d-bfe14f7ad29c.png)
@@ -17,7 +18,7 @@ v0.1.0:
 
 * Drag & drop support on directory textbox.
 * Collect directories step.
-* Select frmo collected directories.
+* Select from collected directories.
 * Delete selected directories only.
 * Long path support via Win32 API library.
 * Always on top.
