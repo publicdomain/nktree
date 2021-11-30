@@ -20,7 +20,9 @@ namespace nktree
         /// <value>The associated icon.</value>
         private Icon associatedIcon = null;
 
-
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:nktree.MainForm"/> class.
+        /// </summary>
         public MainForm()
         {
             //
@@ -86,12 +88,31 @@ namespace nktree
             // update status
             this.collectedCountToolStripStatusLabel.Text = this.collectedCheckedListBox.Items.Count.ToString();
             this.deletedCountToolStripStatusLabel.Text = "0";
-
         }
 
         void DeleteButtonClick(object sender, EventArgs e)
         {
+            int count = 0;
 
+            // Delete checked
+            for (int i = 0; i < this.collectedCheckedListBox.Items.Count; i++)
+            {
+                if (this.collectedCheckedListBox.GetItemChecked(i))
+                {
+                    try
+                    {
+                        Directory.Delete(this.collectedCheckedListBox.Items[i].ToString(), true);
+
+                        count++;
+                    }
+                    catch (Exception exception)
+                    {
+                        MessageBox.Show($"Could not delete directory:{Environment.NewLine}{this.collectedCheckedListBox.Items[i].ToString()}{Environment.NewLine}{Environment.NewLine}Message:{Environment.NewLine}{exception.Message}", "Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+
+            this.deletedCountToolStripStatusLabel.Text = count.ToString();
         }
 
         void BrowseButtonClick(object sender, EventArgs e)
