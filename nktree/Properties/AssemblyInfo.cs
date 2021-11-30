@@ -10,12 +10,12 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("nktree")]
-[assembly: AssemblyDescription("FUI for ")]
+[assembly: AssemblyDescription("GUI for actions on a directory tree.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("PublicDomain.is")]
 [assembly: AssemblyProduct("nktree")]
 [assembly: AssemblyCopyright("Copyright 2021 - Victor L. Senior")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("publicdomain")]
 [assembly: AssemblyCulture("")]
 
 // This sets the default COM visibility of types in the assembly to invisible.
