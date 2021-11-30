@@ -38,7 +38,7 @@ namespace nktree
             // Set PublicDomain.is tool strip menu item image
             this.freeReleasesPublicDomainIsToolStripMenuItem.Image = this.associatedIcon.ToBitmap();
 
-            // Set layout up
+            // Focus directory text box
             this.directoryTextBox.Focus();
         }
 
@@ -127,7 +127,15 @@ namespace nktree
 
         void NewToolStripMenuItemClick(object sender, EventArgs e)
         {
+            // Clear & reset
+            this.directoryTextBox.Clear();
+            this.patternTextBox.Clear();
+            this.collectedCheckedListBox.Items.Clear();
+            this.collectedCountToolStripStatusLabel.Text = "0";
+            this.deletedCountToolStripStatusLabel.Text = "0";
 
+            // Focus directory text box
+            this.directoryTextBox.Focus();
         }
 
         void FreeReleasesPublicDomainIsToolStripMenuItemClick(object sender, EventArgs e)
